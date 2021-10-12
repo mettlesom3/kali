@@ -22,3 +22,13 @@ And decrease the brightness using the below command.
 	
 	>> systemctl enable bluetooth.service
 
+
+>> To synchronize the package index files from their sources again. You need to perform an update before you upgrade or dist-upgrade.
+
+	>> apt-get update
+	
+>> To install the latest versions of the packages currently installed on the user’s system from the sources enumerated in /etc/apt/sources.list. 
+
+	>> apt-get upgrade
+	
+>> 
