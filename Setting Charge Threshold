@@ -1,6 +1,8 @@
+
 >> Setting A Charge Threshold (https://www.linuxuprising.com/2021/02/how-to-limit-battery-charging-set.html)
 
 How to set a battery charge stop threshold for ASUS laptops on Linux
+
 
 1. Find out your ASUS' laptop battery name.
 
@@ -13,6 +15,7 @@ This command should output something like this:
 AC0  BAT0
 
 In this example (from my ASUS notebook), the name of the battery is BAT0, but like I mentioned above, for you it may also be BAT1 or BATT, these being the only supported battery names by the kernel for ASUS laptops.
+
 
 2. Create a systemd service to set the battery charge stop threshold on boot.
 
@@ -51,6 +54,7 @@ Here, change BATTERY_NAME with the name of the battery (BAT0, BAT1 or BATT), and
 
 From what I've read, for best battery lifespan when the laptop is connected to AC most of the time, set the battery charge stop threshold at around 50 or 60. If the battery is used somewhat frequently, set the battery charge stop threshold at about 90.
 
+
 3. Enable and start the battery-charge-threshold systemd service.
 
 Now let's enable and start the newly created battery-charge-threshold systemd service:
@@ -66,6 +70,7 @@ If you want to change the battery charge stop threshold level, you'll need to ed
 sudo systemctl daemon-reload
 
 sudo systemctl restart battery-charge-threshold.service
+
 
 4. Verify that the battery charge stop threshold is working.
 
@@ -91,6 +96,9 @@ Replacing CHARGE_STOP_THRESHOLD with the battery charge stop threshold you want 
 
 Why use a systemd service or a cron job? According to u/esrevartb, from whom I've adapted these instructions, "it seems the udev rule isn't working either because the battery sysfs path isn't yet initialized when the rule gets applied, or because this specific charge_control_end_threshold attribute cannot be modified this way".
 
-[[Edit] To easily set a charge threshold for ASUS laptops (automatic setup of the systemd service and the ability to change the charge threshold using a command), as well as check the current charging threshold, see bat.
 
-[[Edit 2]] TLP 1.4.0 has also added support for limiting battery charging on ASUS laptops.	
+Note: 
+
+>To easily set a charge threshold for ASUS laptops (automatic setup of the systemd service and the ability to change the charge threshold using a command), as well as check the current charging threshold, see bat.
+
+> TLP 1.4.0 has also added support for limiting battery charging on ASUS laptops.	
