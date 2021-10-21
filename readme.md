@@ -31,4 +31,6 @@ And decrease the brightness using the below command.
 
 	>> apt-get upgrade
 	
->> 
+
+
+	
