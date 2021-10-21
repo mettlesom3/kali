@@ -4,7 +4,7 @@
 How to set a battery charge stop threshold for laptops on Linux
 
 
-1. Find out your laptop battery name.
+1 >> Find out your laptop battery name.
 
 Let's start by figuring out the battery name for your laptop. This can be done by using the following command:
 
@@ -17,7 +17,7 @@ AC0  BAT0
 In this example (from my ASUS notebook), the name of the battery is BAT0, but like I mentioned above, for you it may also be BAT1 or BATT, these being the only supported battery names by the kernel for ASUS laptops.
 
 
-2. Create a systemd service to set the battery charge stop threshold on boot.
+2 >> Create a systemd service to set the battery charge stop threshold on boot.
 
 Before creating the systemd service, check if your laptop actually has charge_control_end_threshold in /sys/class/power_supply/BAT* (without it, this won't work):
 
@@ -55,7 +55,7 @@ Here, change BATTERY_NAME with the name of the battery (BAT0, BAT1 or BATT), and
 From what I've read, for best battery lifespan when the laptop is connected to AC most of the time, set the battery charge stop threshold at around 50 or 60. If the battery is used somewhat frequently, set the battery charge stop threshold at about 90.
 
 
-3. Enable and start the battery-charge-threshold systemd service.
+3 >> Enable and start the battery-charge-threshold systemd service.
 
 Now let's enable and start the newly created battery-charge-threshold systemd service:
 
@@ -72,7 +72,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart battery-charge-threshold.service
 
 
-4. Verify that the battery charge stop threshold is working.
+4 >> Verify that the battery charge stop threshold is working.
 
 If your laptop supports it, the battery charging limit should now be set to the value you've used in step 2.
 
