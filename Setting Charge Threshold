@@ -1,12 +1,12 @@
 
 >> Setting A Charge Threshold (https://www.linuxuprising.com/2021/02/how-to-limit-battery-charging-set.html)
 
-How to set a battery charge stop threshold for ASUS laptops on Linux
+How to set a battery charge stop threshold for laptops on Linux
 
 
-1. Find out your ASUS' laptop battery name.
+1. Find out your laptop battery name.
 
-Let's start by figuring out the battery name for your ASUS laptop. This can be done by using the following command:
+Let's start by figuring out the battery name for your laptop. This can be done by using the following command:
 
 ls /sys/class/power_supply
 
@@ -23,9 +23,9 @@ Before creating the systemd service, check if your laptop actually has charge_co
 
 ls /sys/class/power_supply/BAT*/charge_control_end_threshold
 
-If this command returns the path to charge_control_end_threshold, then your ASUS notebook supports limiting battery charging. If the command returns an error, saying there's no such file or directory, then your laptop doesn't support setting a charge threshold.
+If this command returns the path to charge_control_end_threshold, then your notebook supports limiting battery charging. If the command returns an error, saying there's no such file or directory, then your laptop doesn't support setting a charge threshold.
 
-If your ASUS laptop has this file, we can continue. Create a file which we'll call battery-charge-threshold.service in /etc/systemd/system.
+If your laptop has this file, we can continue. Create a file which we'll call battery-charge-threshold.service in /etc/systemd/system.
 
 You can open this file with your default console text editor using:
 
@@ -74,7 +74,7 @@ sudo systemctl restart battery-charge-threshold.service
 
 4. Verify that the battery charge stop threshold is working.
 
-If your ASUS laptop supports it, the battery charging limit should now be set to the value you've used in step 2.
+If your laptop supports it, the battery charging limit should now be set to the value you've used in step 2.
 
 You can check this by charging your laptop to the threshold set in battery-charge-threshold.service, and then use this command:
 
@@ -86,7 +86,7 @@ If the battery charge stop threshold is working, the command should show the fol
 
 Not Charging
 
-If it says "Discharging", make sure your ASUS laptop is actually on AC power, and not running on battery. However, if it says "Charging", well... then your laptop is charging past the charge stop threshold, so this is not working for you, either because your ASUS laptop doesn't support it (which is weird if you have charge_control_end_threshold as mentioned in step 2), you're using a Linux version that's too old for limiting battery charging on your ASUS notebook, or because of human error 😁️.
+If it says "Discharging", make sure your laptop is actually on AC power, and not running on battery. However, if it says "Charging", well... then your laptop is charging past the charge stop threshold, so this is not working for you, either because your laptop doesn't support it (which is weird if you have charge_control_end_threshold as mentioned in step 2), you're using a Linux version that's too old for limiting battery charging on your notebook, or because of human error 😁️.
 
 Extra: In case you don't use systemd, you can also do this by using cron, by running sudo crontab -e and then pasting the following line (this is a single line, triple-click the line to select the whole line), although this is not reliable in all cases from what I've read (I'm not sure why):
 
