@@ -99,6 +99,7 @@ Why use a systemd service or a cron job? According to u/esrevartb, from whom I'v
 
 Note: 
 
->To easily set a charge threshold for ASUS laptops (automatic setup of the systemd service and the ability to change the charge threshold using a command), as well as check the current charging threshold, see bat.
+> To easily set a charge threshold for ASUS laptops (automatic setup of the systemd service and the ability to change the charge threshold using a command), as well as check the current charging threshold, see bat.
 
 > TLP 1.4.0 has also added support for limiting battery charging on ASUS laptops.	
+
