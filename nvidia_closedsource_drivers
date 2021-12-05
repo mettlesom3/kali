@@ -1,0 +1,24 @@
+>> Installing Nvidia closed source drivers-
+
+	> Make sure you have contrib & non-free components are enabled in your network Repositories and that your system is fully up-to-date.
+	
+	sudo apt update
+	sudo apt -y full-upgrade -y
+	[ -f /var/run/reboot-required ] && sudo reboot -f
+	
+	> Determine the exact GPU installed, and check the kernel modules it’s using:
+	
+	lspci | grep -i vga
+	lspci -s 07:00.0 -v	(Note: replace 07:00.0 with your GPU ID)
+	
+	>> Installation_
+		
+		> Once the system has rebooted from doing an OS upgrade, we will proceed to install the Drivers, and the CUDA toolkit (allowing for tool to take advantage of the GPU).
+
+During installation of the drivers the system created new kernel modules, so a reboot is required:
+
+		apt install -y nvidia-driver nvidia-cuda-toolkit
+		
+		> reboot once done_
+		
+			reboot -f
