@@ -1,3 +1,5 @@
+# use root terminal #
+
 >> Installing discord-
 
 	> Download Discord for Linux
@@ -5,11 +7,11 @@
 		- Download the tar.gz file from Discord’s website.
 		- Extract the downloaded file to opt directory.
 		
-			sudo tar -xvzf discord-0.0.10.tar.gz -C /opt
+			$ sudo tar -xvzf discord-0.0.10.tar.gz -C /opt
 
 		- Create Discord command in bin directory.
 		
-			sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+			$ sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
 			
 		- Create desktop icon and menu entry.
 		
@@ -19,7 +21,7 @@
 
 				The exec is for executable file and you can set it to /usr/bin/Discord . The Icon is for the image of Discord that will be displayed when you search for Discord in the menu. You can set it to the /opt/Discord/discord.png. This image is present in the extracted folder.
 				 The discord.desktop file is still in the /opt/Discord directory. You need to move it to /usr/share/applications directory so that your system can access this desktop entry.
-			sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
+			$ sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
 
 		- You are done.
 
