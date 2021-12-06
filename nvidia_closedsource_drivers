@@ -1,3 +1,5 @@
+# use root terminal #
+
 >> Installing Nvidia closed source drivers-
 
 	> Make sure you have contrib & non-free components are enabled in your network Repositories and that your system is fully up-to-date.

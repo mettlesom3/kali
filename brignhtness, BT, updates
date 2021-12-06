@@ -1,8 +1,10 @@
+# use root terminal #
+
 >> To adjust brightness-
 
 You can try changing the brightness level in the Kali Linux terminal using brightnessctl package. First, you may have to install the package using the following command
 
-	>> sudo apt-get install brightnessctl
+	>> apt-get install brightnessctl
  
 After installation, you can increase the brightness using,
 
