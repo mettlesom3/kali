@@ -15,7 +15,7 @@ This command should output something like this:
 
 AC0  BAT0
 
-In this example (from my ASUS notebook), the name of the battery is BAT0, but like I mentioned above, for you it may also be BAT1 or BATT, these being the only supported battery names by the kernel for ASUS laptops.
+In this example (from my ASUS notebook), the name of the battery is BAT0, but for you it may also be BAT1 or BATT, these being the only supported battery names by the kernel for ASUS laptops.
 
 
 2 >> Create a systemd service to set the battery charge stop threshold on boot.
